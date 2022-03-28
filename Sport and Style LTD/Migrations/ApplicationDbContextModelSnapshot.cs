@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sport_and_Style_LTD.Data;
 
-namespace Sport_and_Style_LTD.Data.Migrations
+namespace Sport_and_Style_LTD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220316113441_InitialMigration")]
-    partial class InitialMigration
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,17 +185,14 @@ namespace Sport_and_Style_LTD.Data.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Order");
                 });
@@ -256,7 +251,7 @@ namespace Sport_and_Style_LTD.Data.Migrations
 
                     b.HasIndex("SportId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Sport_and_Style_LTD.Data.Sport", b =>
@@ -336,9 +331,6 @@ namespace Sport_and_Style_LTD.Data.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -424,7 +416,7 @@ namespace Sport_and_Style_LTD.Data.Migrations
 
                     b.HasOne("Sport_and_Style_LTD.Data.User", "User")
                         .WithMany("Order")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Product");
 

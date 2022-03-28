@@ -21,7 +21,7 @@ namespace Sport_and_Style_LTD.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Order.Include(o => o.Product);
+            var applicationDbContext = _context.Order.Include(o => o.Product).Include(o => o.User);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,6 +35,7 @@ namespace Sport_and_Style_LTD.Controllers
 
             var order = await _context.Order
                 .Include(o => o.Product)
+                .Include(o => o.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {
@@ -47,7 +48,8 @@ namespace Sport_and_Style_LTD.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["ProductId"] = new SelectList(_context.Product, "Id", "Id");
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id");
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return View();
         }
 
@@ -64,7 +66,8 @@ namespace Sport_and_Style_LTD.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "Id", "Id", order.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", order.ProductId);
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
             return View(order);
         }
 
@@ -81,7 +84,8 @@ namespace Sport_and_Style_LTD.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "Id", "Id", order.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", order.ProductId);
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
             return View(order);
         }
 
@@ -117,7 +121,8 @@ namespace Sport_and_Style_LTD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "Id", "Id", order.ProductId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", order.ProductId);
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
             return View(order);
         }
 
@@ -131,6 +136,7 @@ namespace Sport_and_Style_LTD.Controllers
 
             var order = await _context.Order
                 .Include(o => o.Product)
+                .Include(o => o.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {
