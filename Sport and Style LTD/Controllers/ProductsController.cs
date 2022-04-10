@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Sport_and_Style_LTD.Data;
 
 namespace Sport_and_Style_LTD.Controllers
+    
 {
+   
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -43,6 +46,7 @@ namespace Sport_and_Style_LTD.Controllers
         }
 
         // GET: Products/Create
+        [Authorize(Roles ="Admin")] 
         public IActionResult Create()
         {
             return View();
@@ -65,6 +69,7 @@ namespace Sport_and_Style_LTD.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -116,6 +121,7 @@ namespace Sport_and_Style_LTD.Controllers
         }
 
         // GET: Products/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

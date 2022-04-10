@@ -3,54 +3,67 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Sport_and_Style_LTD</title>
+    <title>@ViewData["Title"] - Спорт и стил </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+   <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sport_and_Style_LTD</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Спорт и стил</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item ">
+                            <form class="container-fluid justify-content-start">
+                                <a class="btn btn-outline-success me-2" type="button" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </form>
+                        </li>                
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <form class="container-fluid justify-content-start">
+                              <a class="btn btn-outline-success me-2" type="button" aria-current="page" asp-area="" asp-controller="Products" asp-action="Index">Продукти</a>
+                            </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Продукти</a>
+                            <form class="container-fluid justify-content-start">
+                                <a class="btn btn-outline-success me-2" type="button" aria-current="page" asp-area="" asp-controller="Categories" asp-action="Index">Категории</a>
+                                </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Категории</a>
+                            <form class="container-fluid justify-content-start">
+                              <a class="btn btn-outline-success me-2" type="button" aria-current="page" asp-area="" asp-controller="Sports" asp-action="Index">Спорт</a>
+                                </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Sports" asp-action="Index">Спорт</a>
+                            <form class="container-fluid justify-content-start">
+                                <a class="btn btn-outline-success me-2" type="button" aria-current="page" asp-area="" asp-controller="Typeas" asp-action="Index">Тип</a>
+                                </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Typeas" asp-action="Index">Тип</a>
+                            <form class="container-fluid justify-content-start">
+                                <a class="btn btn-outline-success me-2" type="button" aria-current="page" asp-area="" asp-controller="Orders" asp-action="Index">Поръчки</a>
+                                </form>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index">Поръчки</a>
+                        <li class="nav-item">                         
+                            <partial name="_LoginPartial" />
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+   
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Sport_and_Style_LTD - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; Спорт и стил - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
