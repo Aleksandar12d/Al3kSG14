@@ -18,9 +18,8 @@
                 <span asp-validation-for="Model" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdCategory" class="control-label"></label>
-                <input asp-for="IdCategory" class="form-control" />
-                <span asp-validation-for="IdCategory" class="text-danger"></span>
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Size" class="control-label"></label>
@@ -38,14 +37,12 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdApplication" class="control-label"></label>
-                <input asp-for="IdApplication" class="form-control" />
-                <span asp-validation-for="IdApplication" class="text-danger"></span>
+                <label asp-for="ApplicationId" class="control-label"></label>
+                <select asp-for="ApplicationId" class ="form-control" asp-items="ViewBag.ApplicationId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="IdSport" class="control-label"></label>
-                <input asp-for="IdSport" class="form-control" />
-                <span asp-validation-for="IdSport" class="text-danger"></span>
+                <label asp-for="SportId" class="control-label"></label>
+                <select asp-for="SportId" class ="form-control" asp-items="ViewBag.SportId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Price" class="control-label"></label>
@@ -56,11 +53,6 @@
                 <label asp-for="Image" class="control-label"></label>
                 <input asp-for="Image" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DateRegister" class="control-label"></label>
-                <input asp-for="DateRegister" class="form-control" />
-                <span asp-validation-for="DateRegister" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

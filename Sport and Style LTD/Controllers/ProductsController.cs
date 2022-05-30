@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Sport_and_Style_LTD.Data;
 
 namespace Sport_and_Style_LTD.Controllers
-    
 {
-   
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -24,7 +21,8 @@ namespace Sport_and_Style_LTD.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+            var applicationDbContext = _context.Products.Include(p => p.Application).Include(p => p.Category).Include(p => p.Sport);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -36,6 +34,9 @@ namespace Sport_and_Style_LTD.Controllers
             }
 
             var product = await _context.Products
+                .Include(p => p.Application)
+                .Include(p => p.Category)
+                .Include(p => p.Sport)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
@@ -46,9 +47,11 @@ namespace Sport_and_Style_LTD.Controllers
         }
 
         // GET: Products/Create
-        [Authorize(Roles ="Admin")] 
         public IActionResult Create()
         {
+            ViewData["ApplicationId"] = new SelectList(_context.Typea, "Id", "TypeaName");
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CategoryName");
+            ViewData["SportId"] = new SelectList(_context.Sport, "Id", "SportName");
             return View();
         }
 
@@ -57,19 +60,22 @@ namespace Sport_and_Style_LTD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Model,IdCategory,Size,Quantity,Description,IdApplication,IdSport,Price,Image,DateRegister")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Model,CategoryId,Size,Quantity,Description,ApplicationId,SportId,Price,Image,DateRegister")] Product product)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)          
             {
+                product.DateRegister = DateTime.Now; 
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ApplicationId"] = new SelectList(_context.Typea, "Id", "TypeaName", product.ApplicationId);
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CategoryName", product.CategoryId);
+            ViewData["SportId"] = new SelectList(_context.Sport, "Id", "SportName", product.SportId);
             return View(product);
         }
 
         // GET: Products/Edit/5
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,6 +88,9 @@ namespace Sport_and_Style_LTD.Controllers
             {
                 return NotFound();
             }
+            ViewData["ApplicationId"] = new SelectList(_context.Typea, "Id", "TypeaName", product.ApplicationId);
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CategoryName", product.CategoryId);
+            ViewData["SportId"] = new SelectList(_context.Sport, "Id", "SportName", product.SportId);
             return View(product);
         }
 
@@ -90,7 +99,7 @@ namespace Sport_and_Style_LTD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Model,IdCategory,Size,Quantity,Description,IdApplication,IdSport,Price,Image,DateRegister")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Model,CategoryId,Size,Quantity,Description,ApplicationId,SportId,Price,Image,DateRegister")] Product product)
         {
             if (id != product.Id)
             {
@@ -117,11 +126,13 @@ namespace Sport_and_Style_LTD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ApplicationId"] = new SelectList(_context.Typea, "Id", "TypeaName", product.ApplicationId);
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CategoryName", product.CategoryId);
+            ViewData["SportId"] = new SelectList(_context.Sport, "Id", "SportName", product.SportId);
             return View(product);
         }
 
         // GET: Products/Delete/5
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,6 +141,9 @@ namespace Sport_and_Style_LTD.Controllers
             }
 
             var product = await _context.Products
+                .Include(p => p.Application)
+                .Include(p => p.Category)
+                .Include(p => p.Sport)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {

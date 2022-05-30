@@ -522,6 +522,15 @@ C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\scopedc
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Sport and Style LTD.TagHelpers.input.cache
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Sport and Style LTD.TagHelpers.output.cache
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Sport and Style LTD.RazorCoreGenerate.cache
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Views\Categories\Create.cshtml.g.cs
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Views\Categories\Delete.cshtml.g.cs
@@ -569,13 +578,4 @@ C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Sport a
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\ref\Sport and Style LTD.dll
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Sport and Style LTD.pdb
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Sport and Style LTD.genruntimeconfig.cache
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
 C:\Users\PC-5-1312\Desktop\Al3kSG14\Sport and Style LTD\obj\Debug\net5.0\Sport and Style LTD.csproj.AssemblyReference.cache

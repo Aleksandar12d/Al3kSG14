@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Model)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdCategory)
+                @Html.DisplayNameFor(model => model.Category)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Size)
@@ -28,10 +28,10 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdApplication)
+                @Html.DisplayNameFor(model => model.Application)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdSport)
+                @Html.DisplayNameFor(model => model.Sport)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -52,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.Model)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdCategory)
+                @Html.DisplayFor(modelItem => item.Category.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Size)
@@ -64,16 +64,16 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdApplication)
+                @Html.DisplayFor(modelItem => item.Application.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdSport)
+                @Html.DisplayFor(modelItem => item.Sport.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Image)
+                <img src="@Html.DisplayFor(modelItem => item.Image)" width="100" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateRegister)

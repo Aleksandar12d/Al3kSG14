@@ -204,10 +204,10 @@ namespace Sport_and_Style_LTD.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ApplicationId")
+                    b.Property<int>("ApplicationId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateRegister")
@@ -215,15 +215,6 @@ namespace Sport_and_Style_LTD.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdApplication")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdCategory")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdSport")
-                        .HasColumnType("int");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -240,7 +231,7 @@ namespace Sport_and_Style_LTD.Migrations
                     b.Property<string>("Size")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SportId")
+                    b.Property<int>("SportId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -415,7 +406,7 @@ namespace Sport_and_Style_LTD.Migrations
                         .IsRequired();
 
                     b.HasOne("Sport_and_Style_LTD.Data.User", "User")
-                        .WithMany("Order")
+                        .WithMany("Orders")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Product");
@@ -427,15 +418,21 @@ namespace Sport_and_Style_LTD.Migrations
                 {
                     b.HasOne("Sport_and_Style_LTD.Data.Typea", "Application")
                         .WithMany("Products")
-                        .HasForeignKey("ApplicationId");
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Sport_and_Style_LTD.Data.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Sport_and_Style_LTD.Data.Sport", "Sport")
                         .WithMany("Products")
-                        .HasForeignKey("SportId");
+                        .HasForeignKey("SportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Application");
 
@@ -466,7 +463,7 @@ namespace Sport_and_Style_LTD.Migrations
 
             modelBuilder.Entity("Sport_and_Style_LTD.Data.User", b =>
                 {
-                    b.Navigation("Order");
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

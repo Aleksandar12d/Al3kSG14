@@ -10,7 +10,7 @@ using Sport_and_Style_LTD.Data;
 
 namespace Sport_and_Style_LTD.Controllers
 {
-    [Authorize]
+   
     public class OrdersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -50,8 +50,8 @@ namespace Sport_and_Style_LTD.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id");
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Model");
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "FullName");
             return View();
         }
 
@@ -68,8 +68,8 @@ namespace Sport_and_Style_LTD.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", order.ProductId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id","Model" , order.ProductId);
+            ViewData["UserId"] = new SelectList(_context.Users, "Id","FullName", order.UserId);
             return View(order);
         }
 
@@ -86,8 +86,8 @@ namespace Sport_and_Style_LTD.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", order.ProductId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Model", order.ProductId);
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "FullName", order.UserId);
             return View(order);
         }
 
@@ -123,8 +123,8 @@ namespace Sport_and_Style_LTD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Id", order.ProductId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", order.UserId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Model", order.ProductId);
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "FullName", order.UserId);
             return View(order);
         }
 
